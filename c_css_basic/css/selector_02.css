@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*selector_02.css*/
+
+a{color:inherit;}
+
+a.an_01{color:yellow;}
+li> .an_01{color:#f30;}
+li .an_01{color:salmon;}
+
+ul li a{background-color:#0af;}
+li a{background-color:#f0a;}
+.an_01{color:#0af;}
+
+/* 자식과 자손은 동급*
+같은(동급)의 태그가 있으면 뒤늦게 쓴 태그가 입혀있다.
+
+우선순위: type < .class < #id < 부모선택 <.!important(사용하지 않음)
+우선순위를 사용할때, 복합으로 섞이게되면, 언급여부에 따라 순위는 조금 변동될 수 있다! */
+
+/* pseudo code: 의사전달코드 */
+span{background:#ddd;}
+a:hover > span{background:#f00;}
+a:focus > span{outline:5px solid #000;}
+a:active > span{background-color:#00f;}
+a:visited > span{color:#007;}
+/* focus 처리되는 기능은: a, button, input, select, textarea*/
+
+p{margin:100px auto width:500px; height:100px;
+  text-align: center; line-height: 100px;
+  border-width:3px; border-style:solid; border-color:#777;}
+
+p:before{content:"어떻게 될까요?"; color:#f00; font-weight:bold;}
+p:after{content:"어디에 있을까요?"; color:#00f; font-weight:bold;}
