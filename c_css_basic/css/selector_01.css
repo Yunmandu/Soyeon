@@ -12,7 +12,7 @@ h2{background-color:#07f; color:#fff;}
 .com {border-width:3px; border-style:solid; border-color:#333;}
 /* border-style(선스타일): solid (직선) || dotted (점) || dashed; */
 
-#list {border-width:3px; border-style:dotted; bordrer-color:#faf;}
+#list {border-width:3px; border-style:dotted; border-color:#faf;}
 #list > .red > a{color:#f33;}
 /* 기본적으로 a요소는 자체 색이 별도로 존재*/
 #list li> .yellow {color:#f90;}

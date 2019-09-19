@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* homepage.css */
+/* reset */
+html,body,
+h1,h2,h3,h4,h5,h6,
+ul,ol,li,dt,dd,dl{margin:0; padding:0; border:0;}
+ul,ol,li{list-style: none;}
+main,header,nav,aside,article,section,footer{display: block;}
+
+.clearfix:after, 
+.clearfix::after{content:""; display: block; width: 0; height: 0;clear: both;}
+
+#homepage{margin:auto; padding:0; width: 1900px; height: 3560px; background-color: #555;}
+
+
+.headBox{margin: 0; padding:0; width:1900px; height: auto; }
+/* headBox===================================== */
+.head_01{width: auto; height: 40px; background-color: #f5f5f5}
+.head_02{width: auto; height: 79px; background-color: #fff}
+
+.info_01 { float: right;}
+.fb{margin:5px 20px;  height: 30px;font-size: 0.2rem;  float: left;}
+.home{margin:5px 20px;  height: 30px; font-size: 0.2rem; float: left;}
+.information{margin:5px 20px;  height: 30px;  float: left;}
+.time{margin:5px 20px;  height: 30px; font-size: 0.2rem; float: left;}
+.load{margin:5px 20px;  height: 30px; font-size: 0.2rem; float: left;}
+
+.logo{margin-left: 26px; width: 230px; height: 79px; background-color: #378; float: left;}
+.info_02{margin-left:245px; margin-top:20px; width: 900px; height: 50px; float: left; }
+.nav_01{margin-right:89px; float: left;}
+.nav_02{margin-right:89px; float: left;}
+.nav_03{margin-right:89px; float: left;}
+.nav_04{margin-right:89px; float: left;}
+.nav_05{margin-right:89px; float: left;}
+.nav_06{ float: left;}
+
+.click_nav{float: right;}
+.res{width: 80px; height: 77px;  background-color:#fff; border: 1px solid #f1f1f1; float: left; }
+.serch{width: 80px; height: 77px; ; background-color:#999; border: 1px solid #999; float: left; }
+.act{width: 80px; height: 77px;  background-color:#cf3128; border: 1px solid #cf3128; float: left; }
+
+.mainBox{margin: 0; padding:0; width:1900px; height: 857px; background-color: #ffc}
+/* mainBox===================================== */
+
+.arrow_01{margin: auto; font-size: 100px; float: left;}
+.arrow_02{margin: auto; font-size: 100px; float: left;}
+.main_text{ margin:auto; font-size:50px; float: left;}
+
+.article_01{margin: 0; padding:0; width:1900px; height: 895px; background-color: #fca}
+/* article_01===================================== */
+
+.article_02{margin: 0; padding:0; width:1900px; height: 852px; background-color: #fac}
+/* article_02===================================== */
+
+.article_03{margin: 0; padding:0; width:1900px; height: 708px; background-color: #f74}
+/* article_03===================================== */
+
+.footBox{margin: 0; padding:0; width:1900px; height: 127px; background-color: #555}
+/* footer===================================== */

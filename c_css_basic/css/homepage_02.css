@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* homepage_02.css */
+
+/* reset */
+html,body,
+h1,h2,h3,h4,h5,h6,
+ul,ol,li,dl,dd,dt{margin:0; padding:0; border:0;}
+ul,ol,li{list-style: none;}
+main,header,nav,aside,article,section,footer{display: block;}
+table, thead, tbody, tfoot, tr, th, td{margin: 0; padding: 0;
+  border-spacing: 0; border-collapse: collapse; border:1px solid #777;}
+
+a{color: #777; text-decoration: none;}
+a:hover{color: #f07;}
+a:focus{outline:2px solid #f06;}
+abbr{text-decoration: none; text-transform: uppercase;}
+button{border:0; cursor:pointer; background-color: transparent; border:2px solid #f06;}
+
+hr{margin:0; padding:0; border-bottom:1px solid #f06;}
+
+/* html5========================================================= */
+
+main ,header, footer, aside, nav, section, article, figcaption{display: block;}
+
+/* form ========================================================= */
+
+form, fieldset, legend {margin: 0; padding: 0; border: 0;}
+legend{position: absolute; width: 0; height: 0; overflow: hidden;}
+input{box-sizing: border-box; text-indent: 0.5rem; cursor: pointer;}
+button{border:0; background-color: #07f; color: #fff; cursor: pointer; }
+select, text-area{box-sizing: border-box;}
+
+.clearfix:after, 
+.clearfix::after{content:""; display: block; width: 0; height: 0;clear: both;}
+
+/* layout =========================================================== */
+
+#homepage{margin:auto; width: 1900px; height: 3560px; background-color: #888;}
+
+/* headBox========================================================== */
+.headBox{width: auto; height: 119px; background-color: #aab;}
+.nav_01{width: auto; height: 40px; background-color: #f1f1f1;}
+.nav_02{width: auto; height: 79px; background-color: #fff;}
+
+
+/* viewBox========================================================== */
+.viewBox{width: auto; height: 857px; background-color: #eee;}
+
+/* section========================================================== */
+.section{width: auto; height: 895px; background-color: #ddd;}
+.s_title{margin:auto; width: 191px; height: 60px; font-size: 40px; background-color: #afe}
+.s_box{margin:auto; width: 1199px; height: 641px; background-color: #fcd}
+
+/* article_01========================================================== */
+.article_01{width: auto; height: 852px; background-color: #eee;}
+.vr{margin:auto; width: 336px; height: 102px; background-color: #def;}
+.video{margin:auto; width: 949px; height: 530px; background-color: #cdf}
+
+/* article_02========================================================== */
+.article_02{width: auto; height: 708px; background-color: #bbb;}
+
+/* footBox========================================================== */
+.footBox{width: auto; height: 127px; background-color: #222;}
