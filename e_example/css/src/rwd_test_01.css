@@ -1,0 +1,39 @@
+@charset "UTP-8";
+/* rwd_test_01.css */
+
+#wrap{width: 100%;  max-width: 60rem; height: auto;}
+ #headBox{width: 100%; height: 9.375rem; background-color: #fec;}
+  .logo_zone_01{width: 6.25rem; height: 9.375rem; background-color: #aca;}
+ #contentBox{width: 100%; height: 65.625rem;}
+  .ad_zone{width: 100%; height: 28.125rem; background-color: #aaf;}
+  .four_area{width: 100%;height: auto; }
+  .four_area>ul{width: 100%; height: auto; background-color: #abc;}
+  .four_area>ul>li{float: left; width: 25%; height: 37.5rem; background-color: #cfa;}
+  .four_area>ul>li:nth-child(2n){background-color: #68f}
+
+ #footBox{width: 100%; height: 6.25rem; background-color: #f76;}
+  .logo_zone_02{width: 6.25rem; height: 6.25rem; background-color: #46f;}
+
+  @media screen and (max-width:480px) {
+    #headBox{ height: 6.25rem;}
+     .logo_zone_01{width: 100%; height: 100%;}
+     .media_query_01{float: right; margin:1.56rem; width: 2.8125rem; height: 2.8125rem; background-color: #fff; box-sizing: border-box; }
+    #contentBox{ height: 68.75rem;}
+     .ad_zone{ height: 25rem; }
+     .four_area>ul{ height: 25rem; }
+     .four_area>ul>li{ width: 50%; height: 12.5rem; }
+     
+     .media_query_02{width: 100%; height: 6.25em; background-color: #fea;}
+     .media_query_03{width: 100%; height: 12.5em; background-color: #f81;}
+    
+     .logo_zone_02{width: 50%; height: 6.25rem; margin:auto;}
+  }
+
+  @media screen and (min-width:481px) and (max-width:768px){
+    #contentBox{width: 100%; height: 62.5rem;}
+    .ad_zone{ height: 18.75rem; }
+    .four_area>ul>li{ height: 25rem;}
+    .media_query_02{width: 100%; height: 6.25em; background-color: #fea;}
+    .media_query_03{width: 100%; height: 12.5em; background-color: #f81;}
+
+  }
