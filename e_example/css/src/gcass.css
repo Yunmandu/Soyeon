@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* gcass.css */
+
+#wrap {position: relative; width: 61.25rem; width: 980px; height: 53.125rem; height: 850px; margin:auto; background-color: #acf;}
+
+ .nav_02{position: absolute; width: 100%; height: 30px; background-color: #999;}
+  .nav_02>ul{float: right; width: 462px; height: 30px; background-color: #ecf;}
+  .nav_02>ul>.n_01{float: left; width: 95px;  height: 30px; background-color: #999; text-align:center; color:#fff; font-size:0.8rem; line-height: 30px; box-sizing: border-box;}
+  .nav_02>ul>.n_02{float: left; width: 95px;  height: 30px; background-color: #777; text-align:center; color:#fff; font-size:0.8rem; line-height: 30px; box-sizing: border-box;}
+  .nav_02>ul>.n_03{float: left; width: 95px;  height: 30px; background-color: #fe5; text-align:center; color:#fff; font-size:0.8rem; line-height: 30px; box-sizing: border-box;}  
+  .nav_02>ul>.arrow{float: left; width: 177px; height: 30px; background-color: #fe5; text-align:center; color:#fff; font-size:2rem; line-height: 30px; box-sizing: border-box;} 
+
+
+#headBox{ width: auto; height: auto; }
+ .nav_01{float: left; margin-top:30px; width: 249px; height: 710px; background-color: #777;}
+  .nav_01>h1{width: 153px; height: 103px; margin:auto;
+              background-image: url("../../img/gcass_logo.png");}
+  .nav_01>h1>a{display: block;}
+   .menu>ul{width: 136px; height: auto; margin:auto}
+   .menu>ul>li{width: 100%; height: 42px; margin-top: 20px; font-size:1.3rem; border-bottom: 0.3rem solid #fff; box-sizing: border-box; }
+   .menu>ul>li>a{display: block; color:#fff;}
+   
+
+
+#content{ width: auto; height: auto;}
+ .viewBox{float: left; margin-top:30px; width: 731px; height: 710px; background-color: #eee;}
+ 
+#footBox{ width: 100%; height: auto;}
+ .foot_area{float: left; width: 100%; height: 110px; background-color: #fff;}
