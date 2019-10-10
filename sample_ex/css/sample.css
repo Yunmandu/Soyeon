@@ -1,0 +1,54 @@
+/* sample.scss */
+h1 {
+  width: 100%;
+  height: 100%;
+  background-color: #110000;
+  color: #ff4444;
+  border: 2px solid #005; }
+
+.list_01 {
+  background-position: 0 0; }
+
+.list_02 {
+  background-position: 0 10px; }
+
+.list_03 {
+  background-position: 0 40px; }
+
+.list_04 {
+  background-position: 0 100px; }
+
+/* ===================================== */
+.list_01 {
+  background-position: 0 0; }
+
+.list_02 {
+  background-position: 0 10px; }
+
+.list_03 {
+  background-position: 0 40px; }
+
+.list_04 {
+  background-position: 0 100px; }
+
+.list_05 {
+  background-position: 0 200px; }
+
+.list_06 {
+  background-position: 0 100px; }
+
+.list_07 {
+  background-position: 0 150px; }
+
+.myp-1 {
+  \
+  background-image: url("../../img/myi/content/product/food.jpg"); }
+
+.myp-2 {
+  background-image: url("../../img/myi/content/product/nat.jpg"); }
+
+.myp-3 {
+  background-image: url("../../img/myi/content/product/cup.jpg"); }
+
+.myp-4 {
+  background-image: url("../../img/myi/content/product/usb.png"); }

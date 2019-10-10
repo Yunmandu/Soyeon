@@ -1,0 +1,29 @@
+// sample.scss
+/* sample.scss */
+
+@import "var";
+
+
+h1{width: $full; height: $full; background-color: rgba($bg1,1);
+  color:lighten($bg1, 60%);
+  border:2px solid nth($color, 4);
+}
+
+.list_01{background-position: 0 0;}
+.list_02{background-position: 0 10px;}
+.list_03{background-position: 0 40px;}
+.list_04{background-position: 0 100px;}
+
+/* ===================================== */
+
+$myp : (0, 10px, 40px, 100px,200px ,100px, 150px);
+@for $i from 1 to length($myp)+1{
+  .list_0#{$i}{background-position: 0 nth($myp, $i);}
+}
+
+$url : "../../img/myi/content/product/";
+$myp :('food.jpg','nat.jpg','cup.jpg','usb.png');
+
+@for $i from 1 to length($myp)+1{
+  .myp-#{$i}{background-image: url($url + nth($myp, $i));}
+}
