@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- background_basic_03.html-->
+<!-- animation_basic.html-->
 <html lang="ko-KR">
 <head>
   <noscript>
@@ -14,10 +14,11 @@
   <meta name="keyword" content="html, css, js, web, design, 웹디자인">
   <meta name="author" content="Y_mandoo">
   <meta name="generator" content="illustrator, photoshop, sublimetext, vscode">
-  <link rel="stylesheet" href="../font/web_gyeonggi/stylesheet.css">
+  <link rel="stylesheet" href="../fonts/web_gyeonggi/stylesheet.css">
+  <link rel="stylesheet" href="../fonts/web_gyeonggi/stylesheet.css">
   <link rel="stylesheet" href="../css/reset_test.css">
   <link rel="stylesheet" href="../css/common.css">
-   <link rel="stylesheet" href="../css/background_basic_03.css">
+   <link rel="stylesheet" href="../css/animation_basic.css">
   <!--[if IE]>
     <script src="../ie/html5shiv/dist/html5shiv.min.js"></script>
     <script src="../ie/PIE/PIE.js"></script>
@@ -25,24 +26,29 @@
   <![endif]-->
   <link rel="shortcut icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <title>웹기초 이해하기2</title>
+  <title>웹 기초이해하기2</title>
 </head>
 <body>
   <!-- layout ========================== -->
   <div id="wrap">
     <header id="headBox">
-      <h1><a href="../index.html">웹기초 이해하기2</a></h1>
+      <h1><a href="../index.html">웹 기초이해하기2</a></h1>
     </header>
     <main id="contentBox">
-      <h2>background_clip</h2>
-      <div class="clip_1">border-box</div>
-      <div class="clip_2">padding-box</div>
-      <div class="clip_3">content-box</div>
-<hr /><==========================================================>
-      <h2>background-origin</h2>
-      <div class="origin_1">border-box</div>
-      <div class="origin_2">padding-box</div>
-      <div class="origin_3">content-box</div>
+      <h2>animation</h2>
+      <p>animation은 크게 2개의 영역으로 분료되어있다. </p>
+      <ul>
+        <li>animation의 기능을 어떻게 처리할 것인가?: 이름, 시간, 반복여부, 지연시간, 방향...</li>
+        <li>각 시간별 변경되는 내용: 각 구간별 흐름 0%일때 <br />
+        (처리되는 내용, 50%일때 처리되는 내용...)</li>
+      </ul>
+      <hr />
+
+      <div class="ani_one">
+        <div class="test">굴러가는 공을 만들기</div>
+      </div>
+      <div class="myani">ani</div>
+
     </main>
   </div>
   <!-- script ========================== -->
