@@ -1,0 +1,16 @@
+/* supigen.css */
+#wrap{width: 100%; height: 100%; background-color: #888;}
+
+#gnb{ width: 100%; height: 100px; background-color: #fff;}
+#gnb>ul{position: relative; z-index: 100; width: 700px; height: auto; background-color:inherit; margin:auto;}
+#gnb>ul:after{content:" ";  display: block; clear: both; }
+#gnb>ul:before{content:" "; display: block; position: absolute; z-index: -100; bottom: 0; left:50%; margin-left: -50vw; width: 100vw; height: 100%; background-color: #fff;}
+#gnb>ul>li{float: left; width: 16%; height:auto; margin-right: 3.5rem; line-height: 100px; text-align: center;}
+#gnb>ul>li:last-child{margin-right: 0;}
+
+#gnb>ul ul{display: none; width: 100%; height: auto;}
+#gnb>ul ul>li{width: 100%; height: auto; }
+
+#gnb a{display: block; width: 100%; height: auto; }
+#gnb a:hover{border-bottom: 2px solid #f76;}
+#gnb a:focus{border-bottom: 2px solid #f76;}
