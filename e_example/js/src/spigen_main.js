@@ -4,6 +4,7 @@
   const header = $('#headBox');
   const adver = $('#viewBox');
   const content = $('#conBox');
+  const content2 = $('#conBox2');
   const footer = $('#footBox')
 // ================================
   let tempUrl = "./spigen_main_pc/";
@@ -24,6 +25,11 @@
 
     // body.append('<script src="../js/src/spigen_temp_pc/make_spigen_content_01.js">')
     //  body.append('<scrit src=" +conJs+ "</script>');
+    body.append(`<script src="${conJs}"></script>`);
+  });
+  // ===============================================================================================================
+  content2.load(tempUrl+'spigen_main_content_02.html',function(){
+    let conJs = jsUrl+'make_spigen_content_02.js'
     body.append(`<script src="${conJs}"></script>`);
   });
   // ===============================================================================================================
