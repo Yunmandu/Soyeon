@@ -157,6 +157,8 @@ h1 {
     font-size: 1.2rem;
     text-transform: capitalize;
 }
+
+
 #gnb dt > a::after,
 #gnb dt > a:after {
     content: " ";
@@ -170,6 +172,8 @@ h1 {
     border-bottom: 4px solid #f70;
     transition: width 300ms ease;
 }
+ 
+
 
 #gnb dt > a:focus:after,
 #gnb dt > a:hover:after { width: 100%;
