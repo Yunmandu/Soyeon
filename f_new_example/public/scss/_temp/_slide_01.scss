@@ -1,8 +1,44 @@
 //_slide_01.scss
 
-@import "../_basic/var";
-@import "../_basic/mixin";
-@import "../_basic/etc";
+// url() 을 입력하면 해당 파일을 별도의 파일로 첨부(link)하는 의미
+// url() 없이 ""로 사용하면(scss 파일), 해당하는 파일을 하나의 파일로 합치는 현상
 
 // -------------------------------------------------
-.slide_temp{width:90%; min-width:1200px; height:700px; margin:auto; border:$border1; background-color:$sample;}
+.slide_temp{position:relative; width:90%; min-width:1200px; height:700px; margin:auto; border:$border1; background-color:$sample;}
+
+// .view_btn 좌우버튼
+.view_btn{position:absolute; z-index: 500; top:50%; margin:auto; width:100%; height:0; 
+ >button{width:100px; height:100px; background-color:#777; float:left;
+  transform:translateY(-50%);
+ &.next{float:right;}
+ &:hover,
+ &:focus{background-color:$primary;}
+ }
+}
+
+//indicator
+@include indicator_type_01('.view_indicator',30px);
+
+$url : '../img/';
+$myImg : ('mySlideImage_01.jpg',
+          'mySlideImage_02.jpg',
+          'mySlideImage_03.jpg',
+          'mySlideImage_04.jpg');
+
+//가로형 슬라이드 배너
+@include horizontal_slide_banner('.slide_form', 4){
+  $url:'../img/';
+  $imgName:'mySlideImage_';
+  $count:4;
+ @include horizon_banner_img($count, $imgName, $file:'jpg' );
+ //기타 div 및 하위 내용을 삽입
+  &> h3{font-size: 4rem; color:$white; font-weight: bold;}
+  &> p{font-size:1.2rem; color:$white; font-weight: bold; margin-bottom: 1rem;}
+  &> .link_btn{width: 260px; height: 40px;
+    margin-left:5rem; padding:0.2rem; background-color: $primary;
+   border-radius: 40px; line-height: 40px; text-align: center;
+  a{@include link; color:$white; font-weight: 900; font-size: 1.3rem; background-color: $primary; border-radius: 40px;}
+  a:hover,
+  a:focus{background-color:$black;}
+  }
+} 

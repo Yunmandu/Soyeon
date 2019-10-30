@@ -1,0 +1,163 @@
+// slide_02.js
+(function($){
+  const viewBox2 = $('#viewBox_02'),
+        indicator = viewBox2.find('.indicator'),
+        indiLi = indicator.find('li'),
+        indiLiLink = indiLi.children('a'),
+        viewBtn = viewBox2.find('.view_btn'),
+        pause  = viewBtn.find('.pause'),
+        play  = viewBtn.find('.play');
+
+  const slideForm = viewBox2.find('.slide_02_form'),
+        slideGuide = slideForm.children('.guide'),
+        slideEach = slideGuide.children('.banner_area');
+
+  let timed = 500,
+      myn = 0, maxn = slideEach.length,
+      mybool = true, linkFocus = true,  go;
+// ---------------------------------------------------------------
+// action class이름 첨부기능수행
+const MoveSlide = function(n){
+  indiLiLink.removeClass('action');
+  indiLi.eq(n).children('a').addClass('action');
+  slideGuide.animate({'marginLeft':(-100 * n)+'%'}, function(){
+    slideEach.removeClass('action');  
+    setTimeout(function(){
+      slideEach.eq(n).addClass('action');
+    }, timed);
+  }); 
+};// MoveSlide()   //=========================================
+MoveSlide(0);
+// ------------------------------------------------------------
+// 일정시간마다 광고배너 움직이게하기
+
+const GoSlide = function(){
+  go = setInterval(function(){
+    myn++;
+    if(myn >= maxn){ myn = 0; }
+    MoveSlide(myn);
+  }, timed * 4);
+}; // GoSlide();---------------------------------------
+
+const StopSlide = function(){ clearInterval(go); };
+
+const PlayBanner = function(bool){
+  if(bool){ 
+    GoSlide(); 
+  }else{ 
+    StopSlide(); 
+  }
+  mybool = bool;
+};// PlayBanner()
+
+// ----------------------------------------------------------
+// 공통기능 수행 
+
+// 버튼부 수행
+const showBtn = function(bool){
+ // play, stop 버튼 동작유무 판단
+ if(bool){  
+    play.hide();  
+    pause.show(); 
+    console.log('play');
+  }else{  
+    pause.hide();  
+    play.show();   
+    console.log('stop');
+  }
+};// showBtn(true);
+showBtn(mybool);
+PlayBanner(mybool);
+
+// ----------------------------------------------------------
+viewBox2.on('mouseenter',function(){ 
+  PlayBanner(false);
+});
+viewBox2.on('mouseleave',function(){ 
+  (linkFocus) ? PlayBanner(true) :PlayBanner(false);
+  console.log(linkFocus);
+});
+pause.on('click', function(){
+  showBtn(false); play.show().focus();
+});
+play.on('click', function(){  
+  showBtn(true); pause.show().focus();
+});
+
+// -----------------------------------------------------------
+// 클릭시 배너 움직이게 만들기
+indiLiLink.on('click focus', function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  myn = $(this).parent('li').index();
+  linkFocus = false;
+  PlayBanner(false);
+  MoveSlide(myn);
+});
+
+indiLiLink.off('focus', function(){
+  linkFocus = false;
+})
+// -----------------------------------------------------------
+
+})(jQuery);
+
+
+
+
+
+
+//===================================================  
+ /* 
+  let i = 0;
+   setInterval(function(){
+  i++
+  indiLiLink.eq(i).trigger('click');
+  },timed * 3);
+   */
+//===================================================
+
+ // 변수 i는 외부에서 공용으로 사용할 수 있도록, 전역변수로 처리
+ // 인디케이터, 광고배너 이동 후 처리하는 부분 등의 내용은 별도 함수처리
+ // setInterval(), clearInterval()
+
+ // let go;
+ // const Goslide = function(){
+   //   go = setInterval(function(){/* 기능 */}, timed*5);
+   // };
+   // const StopSlide = clearInterval(go);
+   // viewBox2.on('mouseenter',StopSlide);
+   // viewBox2.on('mouseleave',GoSlide);
+
+//===================================================
+
+// setTimeout() : 일정시간뒤에 수행
+// setInterval() : 일정시간마다 수행
+// clearInterval(): setInterval의 기능을 취소/정지
+
+/* 
+let i = 0;
+let maxi = 4;
+let timed = 1000;
+
+let Goslide = function(){
+    go = setInterval(function(){
+  i++;
+  if(i >= maxi){
+    i = 0;
+  }
+  console.log(i);
+ },timed);
+};//Goslide()
+
+Goslide(); //최초의 수행
+
+
+// setTimeout(function(){clearInterval(go);},timed * 15);
+$(document).on('mouseenter',function(){
+ clearInterval(go);
+});
+$(document).on('mouseleave',function(){
+ Goslide();
+}); 
+*/

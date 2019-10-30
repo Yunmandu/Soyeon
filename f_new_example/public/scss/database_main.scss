@@ -1,0 +1,9 @@
+//database_main.scss
+/* database_main.css */
+@import "_basic/var";
+@import "_basic/mixin";
+@import "_basic/etc";
+
+#wrap{width: 100%; height:100%; background-color:#cfa;}
+
+@import "./_temp/database_slide"

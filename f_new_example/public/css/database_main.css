@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* database_main.css */
+/* 
+@include horizontal_slide_banner('.my_banner', 4,){
+  $url:'../img';
+  $imgName:'mybanner_';
+  $count:4;
+ @include horizon_banner_img($count, $imgName, $file:'png' )
+ //기타 div 및 하위 내용을 삽입
+  }
+} 
+*/
+#wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #cfa; }
