@@ -73,5 +73,73 @@
                                'boxSizing':'border-box',
                                'border':'1px solid #28f'});
 
+//------------------------------------------------------------------
+//버튼 요소 만들기
+let btnMake = '<div class="slide_04_btn_area">\
+<button type="button" class="next"><span>다음내용</span></button>\
+<button type="button" class="prev"><span>이전내용</span></button>\
+</div>';
+slide_04.prepend(btnMake);
+const btnArea = slide_04.find('.slide_04_btn_area');
+const btn = btnArea.children('button');
+
+slide_04.css({'position':'relative'});
+btnArea.css({'position':'absolute', 'top':'-50px','left':0});
+btn.css({'width':'100px','height':'30px'})
+btn.eq(0).css({'float':'rigth'});
+btn.eq(1).css({'float':'left', 'marginRight':'10px'});
+/* 
+$('head').find('title').after('<style></style>');
+const style = $('style');
+style.text('#viewBox_04{position:relative;}');
+*/
+
+//---------------------------------------------------------------------
+//생성된 버튼을 이용하여,좌우 슬라이드 기능수행
+
+
+let num = 0;
+/* 
+//next버튼 클릭
+btn.eq(0).on('click',function(e){
+ e.preventDefault();
+ num++;
+//------------------------------------------
+if(num >= imglen-1){ num = 0;
+  slideGuide.css({'left':'100%'})
+}
+//-----------------------------------------
+slideGuide.stop().animate({'left':-100*num + '%'},600);
+});
+
+// prev버튼 클릭
+btn.eq(1).on('click',function(e){
+  e.preventDefault();
+  num--;
+ slideGuide.stop().animate({'left':-100*num + '%'},600,function(){
+ //-------------------------------------------
+ if(num <= -1){
+   num = imglen-2; 
+ slideGuide.css({'left':-100*num + '%'},600);
+}
+//-------------------------------------------
+});
+});
+ */
+//next,prev 버튼을 하나로 구현
+
+btn.on('click',function(e){
+ e.preventDefault();
+ if($(this).index() == 0){ num++;
+  if(num >= imglen-1){
+  slideGuide.css({'left':'100%'});
+  num = 0;}
+ }else{ num--;}
+slideGuide.stop().animate({'left':-100*num + '%'},600,function(){
+  if(num <= -1){
+    num = imglen-2; 
+  slideGuide.css({'left':-100*num + '%'},600);}
+ });
+});
 
 })(jQuery);
