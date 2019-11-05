@@ -1,0 +1,14 @@
+//_slide_05.scss
+#viewBox_05{position: relative; width: 100%; height: 850px; margin:15rem auto;}
+.slide_05_form{width: 100%; height: 100%; background-color: $blueGreen; }
+.slide_05_btn{position: absolute; top:50%; right:0; z-index: 500; width:70px; height:0;
+  >button{float: left; width: 30;height: 30px; font-size:30px; background-color: inherit;}
+}
+.slide_05_form{$c:3;
+width:100%; height:100%;
+ >ul{width: 100%*$c; height:100%;
+  >li{float: left; width: 100% / $c; height:100%;
+    background-repeat: no-repeat; background-position: 50% 50%;
+    background-size:cover;}
+ }
+}//.slide_05_form
