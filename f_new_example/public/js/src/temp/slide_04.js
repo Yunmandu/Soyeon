@@ -12,7 +12,24 @@
 
 
 
-  const imgList = [
+  let imgList;
+
+  $.ajax({
+    async:false,
+    type:'GET',
+    url:'../data/slide_04.json',
+    dataType:'json',
+    error:function(){console.log('data error');},
+    success:function(data){
+      imgList = data;
+      return imgList = data;
+    }
+
+    
+  });
+
+  console.log(imgList);
+  /* [
     {title:'slide title_01', content:'slide content 웅앵우애웅.',
     linkTest:'첫번째 바로가기', link:'http://naver.com',
     bgimg:'myslideImage_01.jpg'},
@@ -31,8 +48,8 @@
 
     {title:'slide title_05', content:'slide 큐비웅앵웅앵웅',
     linkTest:'다섯번째 바로가기', link:'http://www.cubee.co.kr/',
-    bgimg:'myslideImage_05.jpg'},
-   ];
+    bgimg:'myslideImage_05.jpg'}
+   ] */
 //-----------------------------------------
 //기본선택자 및 내용(기본틀) 생성
  const slide_04 = $('#viewBox_04');
