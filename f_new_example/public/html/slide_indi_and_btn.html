@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- content.html-->
+<!-- slide_indi_and_btn.html-->
 <html lang="ko-KR">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../font/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../css/base/reset.css">
   <link rel="stylesheet" href="../css/base/common.css">
-   <!-- <link rel="stylesheet" href="../../css/src/content.css"> -->
+   <link rel="stylesheet" href="../css/slide_indi_and_btn.css">
   <!--[if IE]>
     <script src="../../ie/html5shiv/dist/html5shiv.min.js"></script>
     <script src="../../ie/PIE/PIE.js"></script>
@@ -23,7 +23,6 @@
   <link rel="apple-touch-icon" href="favicon.png">
   <title>문서제목</title>
 </head>
-
 <body>
   <!-- noscript ======================== -->
   <noscript>
@@ -33,27 +32,41 @@
   </noscript>
   <!-- layout ========================== -->
   <div id="wrap">
-    <h2>목차(content)</h2>
-    <hr />
-    <ul>
-      <li><a href="./main.html">slide 01</a></li>
-      <li><a href="./database_main.html">홈페이지 슬라이드</a></li>
-      <li><a href="./paul_01.html">폴바셋 슬라이드</a></li>
-      <li><a href="./slide_all.html">슬라이드전체</a></li>
-      <li><a href="./slide_btn_test.html">슬라이드 테스트 풀이</a></li>
-      <li><a href="./slide_indi_and_btn.html">슬라이드 테스트 풀이2</a></li>
-    </ul>
-    <hr />
-    <ul>
-        <li><a href="./accor.html">실기테스트</a></li>
-        <li><a href="./indicator_test_01.html">실기테스트2</a></li>
-    </ul>
-    
-    
+    <h1>slide_indi_and_btn</h1> 
+    <div id="slide_01"></div>
+    <div id="slide_02"></div>
   </div>
   <!-- script ========================== -->
   <script src="../js/base/jquery-3.4.1.min.js"> </script>
   <script src="../js/base/jquery-ui.min.js"> </script>
-  <script src="../js/src/jquery/content.js"> </script>
+  <script src="../js/src/slide_indi_and_btn.js"> </script>
+  <script>
+   (function($){
+     let data = '../data/slide_indi_btn.json';
+     let img = '../img/slide_test_02/';
+    $('#slide_01').myIndiSlide(data, img);
+    $('#slide_02').myIndiSlide(data, img);
+   })(jQuery);
+  </script>
+  <script>
+   let ww = $(window).outerWidth();
+    //브라우저 크기에 따른 기능
+    const viewBrowser = function(ww){
+      if(ww <= 480){
+      }else if(ww > 480 && ww <= 1280){
+      }else if(ww > 1280 && ww <= 1600){
+      }else{
+      }
+    }
+    viewBrowser(ww);
+    // 사이즈 변경시 새로고침
+   $(window).on('resize',function(){
+     let nw = $(window).outerWidth();
+     if(ww !== nw){
+       location.reload();
+       viewBrowser(ww);
+     }
+   });
+  </script>
 </body>
 </html>

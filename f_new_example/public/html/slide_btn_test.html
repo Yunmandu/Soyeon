@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- content.html-->
+<!-- slide_btn_test.html-->
 <html lang="ko-KR">
 <head>
   <meta charset="UTF-8">
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../font/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="../css/base/reset.css">
   <link rel="stylesheet" href="../css/base/common.css">
-   <!-- <link rel="stylesheet" href="../../css/src/content.css"> -->
+   <link rel="stylesheet" href="../css/slide_btn_test.css">
   <!--[if IE]>
     <script src="../../ie/html5shiv/dist/html5shiv.min.js"></script>
     <script src="../../ie/PIE/PIE.js"></script>
@@ -21,9 +21,8 @@
   <![endif]-->
   <link rel="shortcut icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <title>문서제목</title>
+  <title>광고슬라이드 버튼클릭 기능</title>
 </head>
-
 <body>
   <!-- noscript ======================== -->
   <noscript>
@@ -33,27 +32,52 @@
   </noscript>
   <!-- layout ========================== -->
   <div id="wrap">
-    <h2>목차(content)</h2>
-    <hr />
-    <ul>
-      <li><a href="./main.html">slide 01</a></li>
-      <li><a href="./database_main.html">홈페이지 슬라이드</a></li>
-      <li><a href="./paul_01.html">폴바셋 슬라이드</a></li>
-      <li><a href="./slide_all.html">슬라이드전체</a></li>
-      <li><a href="./slide_btn_test.html">슬라이드 테스트 풀이</a></li>
-      <li><a href="./slide_indi_and_btn.html">슬라이드 테스트 풀이2</a></li>
-    </ul>
-    <hr />
-    <ul>
-        <li><a href="./accor.html">실기테스트</a></li>
-        <li><a href="./indicator_test_01.html">실기테스트2</a></li>
-    </ul>
-    
-    
+    <h1>slide button 기능</h1>
+    <div id="miniProduct">
+     <div class="product">
+       <ul>
+         <li class="product_01"><a href="#"><span>상품설명01</span></a></li>
+         <li class="product_02"><a href="#"><span>상품설명02</span></a></li>
+         <li class="product_03"><a href="#"><span>상품설명03</span></a></li>
+       </ul>
+     </div>
+    </div>
   </div>
   <!-- script ========================== -->
   <script src="../js/base/jquery-3.4.1.min.js"> </script>
   <script src="../js/base/jquery-ui.min.js"> </script>
-  <script src="../js/src/jquery/content.js"> </script>
+  <!-- <script src="../js/src/slide_btn_test.js"> </script> -->
+  <script src="../js/src/slide_plug_sample_01.js"></script>
+  <script>
+   (function($){
+    //  $('#miniProduct').mySlide().fade();
+   })(jQuery);
+  </script>
+  <script>
+ /*  
+  let fn = function(n){
+     let rel = n + 10;
+     return rel;
+  }
+  console.log(fn(10));
+ */
+
+ let t = function(n, r){
+   this.name = n;
+   this.rel = r;
+   //this : window , new에의해 생성된 변수
+ }
+//  let beforeT = t('mandu');
+// //  console.log(beforeT.name);
+
+// js에서 new 이름을 붙이면
+// 기존의 기능을 복제처리해서 새로 생성한다는 의미
+// 생성자
+
+ let myt = new t('mandu', 'this란?');
+ console.log( myt.name , myt.rel );
+
+
+  </script>
 </body>
 </html>

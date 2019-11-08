@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/* indicator_test_01.css */
+/* 
+@include horizontal_slide_banner('.my_banner', 4,){
+  $url:'../img';
+  $imgName:'mybanner_';
+  $count:4;
+ @include horizon_banner_img($count, $imgName, $file:'png' )
+ //기타 div 및 하위 내용을 삽입
+  }
+} 
+*/
+#wrap {
+  width: 100%;
+  height: 100%; }
+
+#miniProduct {
+  position: relative;
+  width: 450px;
+  height: 320px;
+  margin: 100px auto; }
+
+.indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 40px; }
+  .indicator > li {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-left: 15px; }
+    .indicator > li:nth-child(1) {
+      margin-left: 0; }
+    .indicator > li > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: #ccc;
+      border-radius: 100%; }
+      .indicator > li > a span {
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden; }
+    .indicator > li.active > a {
+      background-color: #666666; }
+
+.product {
+  width: 100%;
+  height: 250px;
+  background-color: #fa0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url("../img/slide_test_01/wood.jpg"); }
+  .product > ul {
+    width: 300%;
+    height: 100%; }
+    .product > ul > li {
+      float: left;
+      width: 33.33333%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 20px; }
+      .product > ul > li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain; }
+        .product > ul > li > a > span {
+          display: block;
+          width: 0;
+          height: 0;
+          overflow: hidden; }
+      .product > ul > li:nth-child(1) > a {
+        background-image: url("../img/slide_test_01/slide_01.png"); }
+      .product > ul > li:nth-child(2) > a {
+        background-image: url("../img/slide_test_01/slide_02.png"); }
+      .product > ul > li:nth-child(3) > a {
+        background-image: url("../img/slide_test_01/slide_03.png"); }
+
+#miniProduct_01 {
+  position: relative;
+  width: 450px;
+  height: 300px;
+  background-color: #fff;
+  margin: 100px auto;
+  border: 1px solid #333; }
+
+.btn_01 {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  z-index: 500; }
+  .btn_01 > button {
+    float: right;
+    width: 35px;
+    height: 35px;
+    background-color: inherit;
+    font-size: 1.6rem;
+    color: #ccc; }
+    .btn_01 > button > span {
+      display: block;
+      width: 0;
+      height: 0;
+      overflow: hidden; }
+    .btn_01 > button.active > i {
+      color: #279; }
+
+.product_01 {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url("../img/slide_test_01/wood.jpg"); }
+  .product_01 > ul {
+    width: 400%;
+    height: 100%;
+    margin-left: -100%; }
+    .product_01 > ul > li {
+      float: left;
+      width: 25%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 20px; }
+      .product_01 > ul > li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain; }
+        .product_01 > ul > li > a > span {
+          display: block;
+          width: 0;
+          height: 0;
+          overflow: hidden; }
+      .product_01 > ul > li:nth-child(1) > a {
+        background-image: url("../img/slide_test_01/slide_01.png"); }
+      .product_01 > ul > li:nth-child(2) > a {
+        background-image: url("../img/slide_test_01/slide_02.png"); }
+      .product_01 > ul > li:nth-child(3) > a {
+        background-image: url("../img/slide_test_01/slide_03.png"); }
+
+#miniProduct_03 {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin: 100px auto;
+  background-color: #ccc; }
+
+.btn_03 {
+  position: absolute;
+  top: 35%;
+  margin: auto;
+  z-index: 500;
+  width: 140%;
+  height: 0; }
+  .btn_03 > button {
+    float: left;
+    font-size: 100px;
+    line-height: 100px;
+    background-color: inherit;
+    transform: translateX(-75%);
+    color: #333; }
+    .btn_03 > button.next_03 {
+      float: right; }
+    .btn_03 > button > span {
+      display: block;
+      width: 0;
+      height: 0;
+      overflow: hidden; }
+
+.indicator_03 {
+  position: absolute;
+  left: 40px;
+  bottom: -50px;
+  width: auto;
+  height: 26px;
+  padding: 5px;
+  background-color: #ccc;
+  border-radius: 20px; }
+  .indicator_03 > ul {
+    width: 100%;
+    height: 100%; }
+  .indicator_03 > li {
+    float: left;
+    width: 26px;
+    height: 26px;
+    margin-right: 10px; }
+    .indicator_03 > li:last-child {
+      margin-right: 0; }
+    .indicator_03 > li > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #fff; }
+      .indicator_03 > li > a > span {
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden; }
+
+.product_wrap {
+  width: 100%;
+  height: 100%; }
+  .product_wrap > ul {
+    width: 1000%;
+    height: 100%;
+    margin-left: -100%; }
+    .product_wrap > ul > li {
+      float: left;
+      width: 10%;
+      height: 100%; }
+      .product_wrap > ul > li > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: contain; }
+        .product_wrap > ul > li > a > span {
+          display: block;
+          width: 0;
+          height: 0;
+          overflow: hidden; }
+      .product_wrap > ul > li:nth-of-type(1) > a {
+        background-image: url("../img/slide_test_02/menu_1.png"); }
+      .product_wrap > ul > li:nth-of-type(2) > a {
+        background-image: url("../img/slide_test_02/menu_2.png"); }
+      .product_wrap > ul > li:nth-of-type(3) > a {
+        background-image: url("../img/slide_test_02/menu_3.png"); }
+      .product_wrap > ul > li:nth-of-type(4) > a {
+        background-image: url("../img/slide_test_02/menu_4.png"); }
+      .product_wrap > ul > li:nth-of-type(5) > a {
+        background-image: url("../img/slide_test_02/menu_5.png"); }
+      .product_wrap > ul > li:nth-of-type(6) > a {
+        background-image: url("../img/slide_test_02/menu_6.png"); }
+      .product_wrap > ul > li:nth-of-type(7) > a {
+        background-image: url("../img/slide_test_02/menu_7.png"); }
+      .product_wrap > ul > li:nth-of-type(8) > a {
+        background-image: url("../img/slide_test_02/menu_8.png"); }
+      .product_wrap > ul > li:nth-of-type(9) > a {
+        background-image: url("../img/slide_test_02/menu_9.png"); }
+      .product_wrap > ul > li:nth-of-type(10) > a {
+        background-image: url("../img/slide_test_02/menu_10.png"); }

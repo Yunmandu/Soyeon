@@ -1,0 +1,113 @@
+// indicator_test_01.scss
+/* indicator_test_01.css */
+
+@import "./_basic/var";
+@import "./_basic/mixin";
+@import "./_basic/etc";
+
+@mixin hidden(){
+  display: block; width: 0; height: 0; overflow: hidden;
+}
+
+//======================================
+ #wrap{width: 100%; height: 100%;}
+
+ //1번===============================================================================
+
+ #miniProduct{position: relative; width: 450px; height: 320px; margin:100px auto; }
+ .indicator{position: absolute; left: 50%;bottom:0; 
+        transform:translateX(-50%); width:150px; height:40px; 
+        >li{float: left; width:40px; height:40px; margin-left: 15px;
+          &:nth-child(1){margin-left: 0;}
+          >a{display: block; width: 100%; height: 100%; 
+            background-color:$gray; border-radius:100%;
+            span{ @include hidden; }
+            }
+          &.active > a{background-color:darken($gray, 40%);}
+         }// li
+        }// .indicator
+   
+  $url:'../img/slide_test_01/';
+ .product{width: 100%; height: 250px; background-color:$sample; overflow: hidden;
+     background-repeat: no-repeat; background-position: 50% 50%;
+     background-size: cover; background-image: url($url+"wood.jpg");
+    >ul{ $count:3;
+         width:100% * $count; height:100%;
+      >li{float: left; width:100% / $count; height:100%;
+          box-sizing: border-box; padding: 20px;
+        >a{display:block; width:100%; height:100%;
+          background-repeat: no-repeat; background-position:50% 50%;
+          background-size: contain;
+            >span{ @include hidden; }}
+
+        &:nth-child(1)>a{background-image: url($url+"slide_01.png");}  
+        &:nth-child(2)>a{background-image: url($url+"slide_02.png");}  
+        &:nth-child(3)>a{background-image: url($url+"slide_03.png");}  
+      }// li
+    }// ul    
+  }//.product       
+
+  //2번===========================================================================\
+
+  $url:'../img/slide_test_01/';
+  #miniProduct_01{position: relative; width:450px; height:300px; background-color: #fff; margin: 100px auto; border:1px solid #333;}
+   .btn_01{position: absolute; right:10px; bottom:5px; z-index: 500;
+     >button{float: right; width: 35px; height: 35px; background-color: inherit; font-size: 1.6rem; color:$gray;
+      >span{@include hidden;}
+      &.active > i{ color: #279;}
+    };
+  };
+ .product_01{width: 100%; height: 250px; overflow: hidden;
+   background-repeat: no-repeat; background-position: 50% 50%;
+     background-size: cover; background-image: url($url+"wood.jpg");
+   >ul{$c:3 +1;
+    width:100% * $c; height:100%; margin-left:-100%;
+    >li{float:left; width:100% / $c; height:100%; box-sizing:border-box; padding:20px; 
+     >a{display:block; width: 100%; height: 100%;
+      background-repeat: no-repeat; background-position:50% 50%;
+      background-size: contain;
+      >span{@include hidden;}}
+      &:nth-child(1)>a{background-image: url($url+"slide_01.png");}  
+      &:nth-child(2)>a{background-image: url($url+"slide_02.png");}  
+      &:nth-child(3)>a{background-image: url($url+"slide_03.png");} 
+    };
+   };
+  };
+
+  //3번===========================================================================
+
+  #miniProduct_03{position: relative; width: 400px; height: 300px; margin:100px auto; background-color: #ccc; }
+  .btn_03{position: absolute; top:35%; margin:auto; z-index: 500; width:140%; height:0;
+    >button{float: left;font-size:100px;line-height: 100px; background-color: inherit;transform:translateX(-75%); color:#333; 
+      &.next_03{float: right;}
+      >span{@include hidden;}}
+  }
+ .indicator_03{position: absolute; left:40px; bottom:-50px; width: auto; height:26px; padding:5px;background-color: $gray; border-radius: 20px; 
+  >ul{width: 100%; height: 100%; }
+   >li{float:left; width: 26px; height: 26px; margin-right: 10px;
+    &:last-child{margin-right: 0;}
+    >a{display:block; width: 100%; height: 100%; border-radius: 50%; background-color: #fff;
+     >span{@include hidden;}
+    };
+  };
+};
+
+.product_wrap{width: 100%; height: 100%;
+  >ul{$count:9+1;
+   width: 100% * $count; height: 100%; margin-left:-100%;
+    >li{float:left; width: 100% / $count; height: 100%;
+     >a{display: block; width:100%; height: 100%;
+      background-repeat: no-repeat; background-position: 50% 50%; background-size: contain;
+      >span{@include hidden;}
+    }
+      $url:'../img/slide_test_02/';
+      $imgName:'menu_';
+      $count:9+1;
+      @for $i from 1 through $count{
+        &:nth-of-type(#{$i})>a{
+        background-image:url($url+ $imgName + $i + '.png');
+        }
+     }//반복문 @for
+    }
+   }
+  }
