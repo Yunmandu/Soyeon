@@ -63,6 +63,9 @@ str.parents('#first').css({'padding':'0.2rem','border':'1px solid #333'});
 // str.closest('#first').css({ 'padding': '0.2rem', 'border': '1px dotted #f04'}); 
  //()에 대상을 지칭하지않으면 적용이 안됨 현재로는 잘 사용안함
 
+ //parentsUntil: 부모(선택된 상위) 선택자 제외한 자식까지
+ //closest : 부모(상위포함) 선택자만
+
  //https://oscarotero.com/jquery
 
  /* 

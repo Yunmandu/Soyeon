@@ -33,7 +33,7 @@
   myt.prependTo(myBox);
 
   // append, prepend, appendTo, prependTo : 
-  //값을 내부에 삽입하는 기눙, 해당요소를 만들어서 삽입 or 기존의 요소를 끌어와서 삽입하는 기능
+  //값을 내부에 삽입하는 기능, 해당요소를 만들어서 삽입 or 기존의 요소를 끌어와서 삽입하는 기능
   // To가 붙으면, 주어의 위치가 바뀌는 것을 의미
 
   //before, after
