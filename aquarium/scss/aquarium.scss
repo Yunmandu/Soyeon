@@ -1,11 +1,13 @@
 
 
 #warp{width: 100%; min-width: 280px; height: auto; 
-  background-image:linear-gradient(#0277c2 50%,#283c60); margin:auto;}
+  background-image:linear-gradient(#0277d0 50%,#283c60); margin:auto;}
 
 /* headBox ============================================================================ */
-#headBox{position: relative; padding-top: 20px; width: 100%; height: 752px; background-color: #fac;
- >h1 {margin-left: 10px; float: left; width: 141px; height: 50px;
+#headBox{position: relative; z-index: 100; padding-top: 20px; width: 100%; height: 752px; background-color: #fac;
+  &:before{content:" "; display: block; position: absolute; z-index: -1; 
+    top: 0; left: 0; width: 100%; height: 100%;background-image: linear-gradient(rgba(#0277d0, 0) 50%, #0277d0);}
+  >h1 {margin-left: 10px; float: left; width: 141px; height: 50px;
    a{display: block; width: 100%;height: 100%;
   }
   background-image: url(../img/aquarium/logo.png);
@@ -13,7 +15,7 @@
   background-position: 0 ;
   background-size: contain;
  }
-.navBox{margin-right: 20px; padding-top:5px; float: right; width: 41px; height: 41px;
+.navBox{ margin-right: 20px; padding-top:5px; float: right; width: 41px; height: 41px;
   >a{display: block; width: 100%; height: 100%;
     background-image: url(../img/aquarium/nav_btn.png);
     background-repeat: no-repeat;
@@ -25,9 +27,9 @@
 .h_text{ width: 100%; height: 100%;
   >.head_text{width: 100%; height: 100%; font-weight: bold;
     >dl{position: absolute; top:126px; left:0; right: 0; margin: auto;  width: 100%; height: auto;
-      >dt{width: 100%; height: auto; text-align: center; text-transform:uppercase; font-family: "myriad pro"; margin-top:70px; font-size: 60px; color:#fff;
+      >dt{width: 100%; height: auto; text-align: center; text-transform:uppercase; font-family: "myriad pro"; margin-top:50px; font-size: 60px; color:#fff;
         text-shadow: (3px 3px 4px #111);}
-      >dd{width: 100%; height: auto; text-align: center; color:#fff; font-weight: normal; text-shadow: (3px 3px 4px #111);}
+      >dd{width: 100%; height: auto; text-align: center; font-size: 25px; color:#fff; margin-top: 10px; font-weight: normal; text-shadow: (3px 3px 4px #111);}
     }
   }
 }//.h_text
@@ -48,7 +50,19 @@ background-size: cover;
 #mainBox{width: 100%; height: 1620px;
   .contentBox{width: 100%; height: 686px;padding-top:100px; box-sizing: border-box;
     .c_box{width: 432px; height: 505px; margin:auto;}
-    .c_pic_area{width: 100%; height: 365px; background-color: #888;}
+    .c_pic_area{position: relative; width: 100%; height: 365px;
+      >ul{width: 100%; height: 100%;
+       >li{position: absolute; top:0; left:0; width: 100%; height: 100%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+
+      }
+       >li:nth-child(1){background-image: url("../img/aquarium/guide_01.jpg");}
+       >li:nth-child(2){background-image: url("../img/aquarium/guide_02.jpg");}
+       >li:nth-child(3){background-image: url("../img/aquarium/guide_03.jpg");}
+       }
+      }
     .mune_area{width: 100%; height: 140px;
       >ul{width: 100%; height: 100%;
         >li{float: left; width: 144px; height: 100%; background-color:rgba(1,1,1,0.5); padding:10px; box-sizing: border-box;
@@ -60,7 +74,7 @@ background-size: cover;
       }
     }
   }//.contentBox
-  >.picBox{position:relative; width: 100%; height: 342px; background-color: #888; overflow: hidden;
+  >.picBox{ position:relative; width: 100%; height: 342px; background-color: #888; overflow: hidden;
     >video{width:auto; height:auto; min-width:100%; min-height:100%;
       position: absolute; left:50%; top:50%; transform:translate(-50%, -50%);
     }
@@ -96,10 +110,10 @@ background-size: cover;
 }//#mainBox
 
 /* footBox =================================================== */
-#footBox{width: 100%; height: 390px; background-color: #181818;
- >.snsBox{width: 100%; height: 87px; border:1px solid #222; border-bottom: none; box-sizing:border-box; background-color: #fff;
-  >ul{width: 90%; height:100%; margin:auto; padding-top:30px; box-sizing: border-box;
-   >li{float: left; width: 20vw;  max-width: 175px; height: 5vw; background-color: #ccc; margin-right: 10px; 
+#footBox{width: 100%; height: 340px; background-color: #181818;
+ >.snsBox{width: 100%; height: 70px; border:1px solid #222; border-bottom: none; box-sizing:border-box; background-color: #fff;
+  >ul{width: 90%; height:100%; margin:auto; padding-top:15px; box-sizing: border-box;
+   >li{float: left; width: 20vw;  max-width: 175px; height: 5vw; max-height: 55px; background-color: #ccc; margin-right: 2%; 
     >a{display: block; width: 100%; height: 100%;
       background-repeat: no-repeat;
       background-size: 400%;
@@ -112,23 +126,32 @@ background-size: cover;
     >li:last-child{margin-right: 0;}
   }
 }
- >.awardBox{width: 100%; height: 87px; border:1px solid #222; box-sizing:border-box; background-color: #fff;
+ >.awardBox{width: 100%; height: 70px; border:1px solid #222; box-sizing:border-box; background-color: #fff;
   >ul{width: 90%; height:100%; margin:auto; padding-top:10px; box-sizing: border-box;
-    >li{float: left; width: 29vw; max-width: 230px;  height:10vw;max-height: 74px; background-color: #ccc; 
+    >li{float: left; width: 27vw; max-width: 230px;  height:8vw;max-height: 48px; background-color: #ccc; 
       background-repeat: no-repeat;
       background-image: url(../img/aquarium/bn_award_mobile.jpg);
      }
      >li:nth-child(1){ background-size: 400%; background-position: 0 50%;}
+     >li:nth-child(1)>a{display: block; width: 100%; height: 100%;}
      >li:nth-child(2){background-size: 300%; background-position: 33% 50%; margin-right: 5px;}
      >li:nth-child(3){background-size: 240%; background-position: 97% 30%;}
     >li:last-child{margin-right: 0;}
    }}
- >.infoBox{width: 100%; height: 215px;}
+ >.infoBox{padding-top:20px;  width: 100%; height: 125px; box-sizing: border-box; color:#eee; font-weight: lighter;
+   >.info_01{font-size: 0.5rem; margin-bottom: 20px;
+    >a{color:#eee;}
+  }
+   >.info_02{font-size: 0.2rem; word-spacing: keep-all;}
+  
+  }
+
 }//#footBox
 
-/* -design 기준: 480px */
+/* -design 기준: ~480px */
 @media screen and (max-width:479px) {
   
+
 }
 
 /* -design 기준: 480px */
@@ -187,12 +210,18 @@ background-size: cover;
   }
   }//#mainBox
 
-  #footBox{height: 579px;
-   >.snsBox{height: 130px;
-    >ul{padding-top:35px;
+  #footBox{height: 450px;
+   >.snsBox{height: 100px;
+    >ul{padding-top:20px;
     }}
-   >.awardBox{height: 130px;}
-   .infoBox{height: 319px;}
+   >.awardBox{height: 100px;
+    >ul{
+      >li{max-height: 60px;}
+    }}
+   .infoBox{ width: 80%; margin-left: 10px; height: 170px;
+    >.info_01{font-size: 0.9rem; }
+    >.info_02{font-size: 0.8rem; }
+  }
   }
 
 }//(min-width:768px) and (max-width:1279px)
@@ -247,6 +276,11 @@ background-size: cover;
   }//.contentBox
   >.picBox{height: 750px;}
   >.adBox{position: relative; position: relative; height: 1000px;
+    >.indicator{width: auto;bottom:10%;
+      >li{float: left;
+       >a{width:25px; height:25px;}
+      }
+    }
     >.ad_title{font-size:50px}
      >.ad_area{position: absolute; height: 510px; top:50%; left:950px; transform: translateY(-50%);
        >.ad_zone{width: 430px; height: 510px;
@@ -261,10 +295,15 @@ background-size: cover;
   }
  }
 
- #footBox{height: 449px;
-  >.snsBox{height: 130px;}
+ #footBox{height: 380px;
+  >.snsBox{ height: 130px;
+   >ul{width: 80%;}
+}
   >.awardBox{display: none;}
-  >.infoBox{height: 319px;}
+  >.infoBox{margin:auto; height: 200px;  box-sizing: border-box;
+    >.info_01{font-size: 1.2rem; }
+    >.info_02{font-size: 1rem; }
+  }
  }
 
 }//(min-width:1280px) and (max-width:1919px)
@@ -303,7 +342,7 @@ background-size: cover;
         >li{float:none; width: 40vw; height: 105px; margin-bottom: 30px;
           background-color:rgba(1,1,1,0.5);
           >a{
-            >span{width: auto; height: 100%; color:#fff; font-size:30px; line-height: 70px; text-align: right;  font-weight: bold; margin-right:60%; padding-top:0;
+            >span{width: auto; height: 100%; color:#fff; font-size:30px; line-height: 55px; text-align: right;  font-weight: bold; margin-right:60%; padding-top:0;
              >.br{display:none;}}
             }
           }
@@ -315,6 +354,11 @@ background-size: cover;
   }
    >.picBox{height: 1050px;}
    >.adBox{position: relative; height: 970px;
+    >.indicator{width: auto;bottom:8%;
+      >li{float: left;
+       >a{width:25px; height:25px;}
+      }
+    }
     >.ad_title{font-size:50px}
     >.ad_area{position: absolute; height: 510px; top:50%; left:930px; transform: translateY(-50%);
       >.ad_zone{width: 430px; height: 510px;
@@ -329,10 +373,12 @@ background-size: cover;
    }
   }//mainBox
 
-  #footBox{height: 449px;
+  #footBox{height: 400px;
    >.snsBox{height: 130px;}
    >.awardBox{display: none;}
-   >.infoBox{height: 319px;}
+   >.infoBox{margin:auto; height: 219px; 
+    >.info_01{font-size: 0.9rem; }
+    >.info_02{font-size: 0.8rem; }}
   }
 
 }//screen and (min-width:1920px)
