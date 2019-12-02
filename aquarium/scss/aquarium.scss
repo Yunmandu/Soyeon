@@ -1,10 +1,10 @@
+// aqauarium.scss
 
-
-#warp{width: 100%; min-width: 280px; height: auto; 
+#wrap{width: 100%; min-width: 280px; height: auto;  overflow-x: hidden; overflow-y:visible;
   background-image:linear-gradient(#0277d0 50%,#283c60); margin:auto;}
 
 /* headBox ============================================================================ */
-#headBox{position: relative; z-index: 100; padding-top: 20px; width: 100%; height: 752px; background-color: #fac;
+#headBox{position: relative; z-index: 100; padding-top: 15px; width: 100%; height: 752px; background-color: #fac;
   &:before{content:" "; display: block; position: absolute; z-index: -1; 
     top: 0; left: 0; width: 100%; height: 100%;background-image: linear-gradient(rgba(#0277d0, 0) 50%, #0277d0);}
   >h1 {margin-left: 10px; float: left; width: 141px; height: 50px;
@@ -21,7 +21,7 @@
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: contain;} 
-  >ul{display: none;}
+  >.gnb{display: none;}
 }//.navBox
 
 .h_text{ width: 100%; height: 100%;
@@ -40,7 +40,9 @@
       font-family: "myriad pro"; text-transform:uppercase; font-weight: bold;}
   }
 }//.t_box
+
 background-image: url(../img/aquarium/headBg.jpg);
+background-attachment: fixed;
 background-repeat: no-repeat;
 background-position: 50% 50%;
 background-size: cover;
@@ -63,23 +65,26 @@ background-size: cover;
        >li:nth-child(3){background-image: url("../img/aquarium/guide_03.jpg");}
        }
       }
-    .mune_area{width: 100%; height: 140px;
+    .menu_area{width: 100%; height: 140px;
       >ul{width: 100%; height: 100%;
-        >li{float: left; width: 144px; height: 100%; background-color:rgba(1,1,1,0.5); padding:10px; box-sizing: border-box;
-        >a{display: block; width: 100%; height: 100%; padding:15px; box-sizing: border-box;
-          >span{display:block; width: 100%; height: 100%; color:#fff; font-size:16px; line-height: 30px; text-align: center;  font-weight: bold; padding-top:15px; box-sizing: border-box;}
+        >li{float: left; width: 144px; height: 100%;  background-color:rgba(1,1,1,0.5);
+        >a{display: block; width: 100%; height: 100%; box-sizing: border-box;
+          >span{display:block; width: 100%; height: 100%; color:#fff; font-size:16px; line-height: 30px; text-align: center;  font-weight: bold; padding-top:35px; box-sizing: border-box;}
          }
-        }
-        >li:nth-child(2) span{box-sizing: border-box; padding-top:30px;}
-      }
-    }
+         >a:focus{background-color: rgba(1,1,1,0.8);}
+        }//li
+        >li:nth-child(2) span{box-sizing: border-box; padding-top:50px;}
+        >li:hover{background-color: rgba(1,1,1,0.8);}
+
+      }//ul
+    }//menu_area
   }//.contentBox
-  >.picBox{ position:relative; width: 100%; height: 342px; background-color: #888; overflow: hidden;
+  >.picBox{ position:relative; width: 90%; height: 342px; background-color: #888; overflow: hidden; margin:auto;
     >video{width:auto; height:auto; min-width:100%; min-height:100%;
       position: absolute; left:50%; top:50%; transform:translate(-50%, -50%);
     }
   }
-  >.adBox{position: relative; width: 100%; height: 592px; padding-top: 50px; box-sizing: border-box; overflow: hidden;
+  >.adBox{position: relative; width: 100%; height: 592px; padding-top: 60px; box-sizing: border-box; overflow: hidden;
     >.indicator{position: absolute; left: 50%;bottom:20px; 
       transform:translateX(-50%); width:auto; height:40px; 
       >li{float: left; width: auto; height: auto; margin-left: 15px;
@@ -87,7 +92,8 @@ background-size: cover;
         >a{display: block; width:20px; height:20px;
           background-color:#959595; border-radius:100%;
           }
-        &.active > a{width: 75px; background-color:#252525;border-radius:20px;}
+        &.action > a{width: 70px; background-color:#252525; border-radius:20px;}
+        >a:focus{background-color:#252525; border-radius:20px;}
        }// li
 
       }// .indicator
@@ -95,13 +101,24 @@ background-size: cover;
     color:#fff; text-transform: uppercase; text-align: center; line-height: 62px; font-size:40px;
       text-shadow: (3px 3px 4px #111);}
     >.ad_area {width:100%; height: 350px;  
-      >.ad_zone{width: 270px; height: 350px;  margin: auto;
-       >ul{$count: 5;
+      >.ad_zone{width: 270px; height: 350px;  margin: auto; 
+       >ul{position: relative; $count: 5;
         width:270px * $count; height: 100%; transform:translateX(-50%); margin-left:50%;
-
-         >li{float: left; width: 270px; height: 100%;padding:20px; box-sizing: border-box; 
-          >a{display:block; width: 100%; height: 100%; background-color: #f9f;}}
-        }
+         >li{float: left; width: 270px; height: 100%;padding:20px; box-sizing: border-box;
+          transition: all 500ms ease; 
+          >a{display:block; width: 100%; height: 100%;
+            background-repeat: no-repeat;
+            background-position:50% 50%;
+            background-size: contain;
+          }//a
+           @for $i from 1 through $count{
+            >a.ad_pic_#{$i}{
+              background-image: url('../img/aquarium/ad_0#{$i}.png');
+            }
+           }
+         }//li
+         >li.action{padding:0;}
+        }//ul
        }
       >a {display: block; width: 100%; height: 100%;}
     }//.ad_area
@@ -150,8 +167,22 @@ background-size: cover;
 
 /* -design 기준: ~480px */
 @media screen and (max-width:479px) {
-  
+  #mainBox{height: 1538px;
+    .contentBox{height: 570px; padding-top:80px; 
+      .c_box{width: 300px; height: 390px;}
+      .c_pic_area{ height: 290px;}
 
+      .menu_area{width: 100%; height: 100px;
+        >ul{>li{ width: 100px; 
+          >a{
+            >span{font-size:10px; line-height: 20px; padding-top:26px; }
+           }
+          }
+          >li:nth-child(2) span{padding-top:35px;}
+        }
+      }
+    }//.contentBox
+  }
 }
 
 /* -design 기준: 480px */
@@ -161,8 +192,8 @@ background-size: cover;
 
 /* -design 기준: 768px */
 @media screen and (min-width:768px) and (max-width:1279px) {
-  #headBox{height: 1200px;padding-top: 34px;
-    >h1 {margin-left: 30px; width: 225px; height: 79px;}
+  #headBox{height: 1200px;padding-top: 25px;
+    >h1 {margin-left: 30px; width: 200px; height: 79px;}
     >.navBox{margin-right: 33px; width: 65px; height: 65px;}
     >.h_text{
      >.head_text>dl{position: absolute; top:250px;
@@ -178,15 +209,16 @@ background-size: cover;
   >.contentBox{height: 1097px;padding-top:160px;
     >.c_box{width: 690px; height: 807px;
     >.c_pic_area{height: 584px;}
-    >.mune_area{height: 223px;
+    >.menu_area{height: 223px;
       >ul{>li{width: 230px;
        >a{
-        >span {font-size:30px; line-height: 45px; text-align: center;  font-weight: bold; padding-top:45px; box-sizing: border-box;}
+        >span {font-size:30px; line-height: 45px; text-align: center;  font-weight: bold; padding-top:60px; box-sizing: border-box;}
         }
        }
-       >li:nth-child(2) span{padding-top:65px;}
+       >li:nth-child(2) span{padding-top:80px;}
+       >li:hover{background-color: rgba(1,1,1,0.8);}
       }
-    }//.mune_area
+    }//.menu_area
    }//.c_box
   }//.contentBox
 
@@ -218,7 +250,7 @@ background-size: cover;
     >ul{
       >li{max-height: 60px;}
     }}
-   .infoBox{ width: 80%; margin-left: 10px; height: 170px;
+   .infoBox{ width: 90%; height: 170px; margin:auto;
     >.info_01{font-size: 0.9rem; }
     >.info_02{font-size: 0.8rem; }
   }
@@ -229,13 +261,14 @@ background-size: cover;
 /* -design 기준: 1280px */
 @media screen and (min-width:1280px) and (max-width:1919px) {
   #headBox{height: 1000px; padding-top: 34px;
-   >h1{float: none; width: 300px; height: 105px; margin:auto; margin-bottom: 37px;}
+   >h1{float: none;  width: 250px; height: 90px; margin:auto; margin-bottom: 37px;}
    >.navBox{width: 100%; height: 70px; float: none; background-color: rgba(1,1,1,0.3);
-    line-height:70px;
+    line-height:70px; padding:0;
     >a{display:none;} 
-    >ul{display: block; width: 1030px; height: auto; margin:auto;
-      >li{ float: left; margin-right: 77px; width: 144px; height: 70px; 
+    >dl{display: block; width: 1030px; height: auto; margin:auto;
+      >dt{ float: left; margin-right: 77px; width: 144px; height: 70px; 
         >a{display: block; width: 100%; height: 100%; color:#fff; font-size: 20px; text-align: center; font-weight: bold; }
+        >a:hover, a:focus{ background-image: linear-gradient(90deg , rgba(1,1,1,0) ,rgba(1,1,1,0.6)20% 80%, rgba(1,1,1,0));}
        }
       >li:last-child { margin-right: 0;}
     }
@@ -246,9 +279,11 @@ background-size: cover;
     >dt{font-size: 80px;}
     >dd{font-size: 40px; }
    }
-   >.t_box{position: absolute; top:780px; left: 0; right: 0; margin:auto; width: 220px; height: 60px; border-radius: 3rem; background-color: #333333;
+   >.t_box{position: absolute; top:780px; left: 0; right: 0; margin:auto; width: 220px; height: 60px;  border-radius: 3rem;
     >h3{line-height: 60px;
-      >a{font-size: 20px;}
+      >a{font-size: 20px;  border-radius: 3rem; background-color: #333333;}
+      >a:hover,
+      >a:focus{background-color: #fff; color:#192d56; box-shadow: 2px 4px 5px #333;}
     }
    }//.t_box
   }//.h_text
@@ -258,20 +293,21 @@ background-size: cover;
  #mainBox{ height: 2850px;
   >.contentBox{position: relative; height: 1100px;
     >.c_box{width: 100%; height:100%; background-color: inherit;
-      >.c_pic_area{position: absolute;top:25%; left:0; right:0; margin:auto;  width: 700px; height: 590px}
-      >.mune_area{position: absolute; top: 40%; right:0; width: auto; height: auto;
-       >ul{width: auto; height: auto;
-        >li{float:none; width: 40vw; height: 105px; margin-bottom: 30px;
+      >.c_pic_area{position: absolute;top:25%; left:0; right:0; margin:auto;  width: 700px; height: 590px;  box-shadow: 5px 5px 12px #111;}
+      >.menu_area{position: absolute; top: 40%; right:0; width: auto; height: auto;
+       >ul{width: 40vw; height: auto;
+        >li{float:right; width: 40vw; height: 105px; margin-bottom: 30px;
           background-color:rgba(1,1,1,0.5);
-         >a{
-          >span{width: auto; height: 100%; color:#fff; font-size:28px; line-height: 70px; text-align: right;  font-weight: bold; margin-right:50%; padding-top:0;
-           >.br{display:none;}}
-          }
+          >a{
+           >span{width: auto; height: 100%; color:#fff; font-size:28px; line-height: 55px;  text-align: right;  font-weight: bold; margin-right:48%; padding-top:25px;
+            >.br{display:none;}}
+           }
          }//li
-         >li:nth-child(2) span{padding-top:0;}
+         >li:nth-child(2) span{padding-top:25px;}
         >li:last-child{margin-bottom:0; }
+        >li:hover ,>li.act{background-color: rgba(1,1,1,0.9); width: 666px; height: 120px; line-height: 133px; padding-top: 15px;}
       }
-     }//.mune_area
+     }//.menu_area
     }
   }//.contentBox
   >.picBox{height: 750px;}
@@ -281,11 +317,12 @@ background-size: cover;
        >a{width:25px; height:25px;}
       }
     }
-    >.ad_title{font-size:50px}
-     >.ad_area{position: absolute; height: 510px; top:50%; left:950px; transform: translateY(-50%);
-       >.ad_zone{width: 430px; height: 510px;
+    >.ad_title{position: absolute; left: 16%; top:40%; font-size:50px}
+     >.ad_area{position: absolute; height: 510px; top:50%; left:40%; transform: translateY(-50%); 
+       overflow: hidden;
+       >.ad_zone{width: 430px; height: 510px;margin:0;
          >ul{$count: 5;
-          width:430px * $count; height: 100%; transform:translateX(-50%); margin-left:50%;
+          width:430px * $count; height: 100%; transform:translateX(0); margin-left:0;
            >li{width: 430px; height: 510px;}
          }
        }
@@ -300,7 +337,7 @@ background-size: cover;
    >ul{width: 80%;}
 }
   >.awardBox{display: none;}
-  >.infoBox{margin:auto; height: 200px;  box-sizing: border-box;
+  >.infoBox{margin:auto; width: 80%; height: 200px;  box-sizing: border-box;
     >.info_01{font-size: 1.2rem; }
     >.info_02{font-size: 1rem; }
   }
@@ -311,59 +348,78 @@ background-size: cover;
 /* -design 기준: 1920px */
 @media screen and (min-width:1920px) {
   #headBox{height: 1100px; padding-top: 34px;
-   >h1{float: none; width: 300px; height: 105px; margin:auto; margin-bottom: 37px;}
+   >h1{float: none; width: 250px; height: 90px; margin:auto; margin-bottom: 37px;}
    >.navBox{width: 100%; height: 70px; float: none; background-color: rgba(1,1,1,0.3);
-    line-height:70px; 
+    line-height:70px; padding:0; 
     >a{display:none;} 
-    >ul{display: block; width: 1030px; height: auto; margin:auto;
-      >li{ float: left; margin-right: 77px; width: 144px; height: 70px; 
-        >a{display: block; width: 100%; height: 100%; color:#fff; font-size: 20px; text-align: center; font-weight: bold;}
+    >.gnb{position: relative; z-index: 100; display: block; width: 950px; height:auto; margin:auto; 
+      &:before{position: absolute; content:" "; left:50%; margin-left:-50vw; z-index: -50; margin-top:70px;  display:block; width: 100vw; height:0;background-color: rgba(1,1,1,0.8); transition:all 600ms ease;} 
+      &.view:before{height:100%;}
+    >dl{float: left; margin-right: 40px; width: 144px; height: auto; 
+      >dt{width: 100%; height: 70px;
+        >a{ display: block; width: 100%; height: 100%; color:#fff; font-size: 20px; text-align: center; font-weight: bold;
+        }
       }
-      >li:last-child { margin-right: 0;}
+      >dt:last-child { margin-right: 0;}
+      >dd{width: 100%; height:auto; text-align: center; display: none;
+       >ul{width: 100%; height: auto;
+        >li{width: 100%; height:auto; margin-bottom:5px;
+          >a{display: block; width: 100%; height: 70px; color:#fff; }
+        }}
+      }
+    }//dl
+   }//gnb
+    &:hover{ background-color: rgba(1,1,1,0.8);
     }
    }
+
    .h_text{height: 888px;
     >.head_text>dl{position: absolute; top:370px;
       >dt{font-size: 80px;}
       >dd{font-size: 40px; }
     }
-    >.t_box{position: absolute; top:814px; left: 0; right: 0; margin:auto; width: 220px; height: 60px; border-radius: 3rem; background-color: #333333;
-      >h3{line-height: 65px;
-        >a{font-size: 20px;}}
+    >.t_box{position: absolute; top:814px; left: 0; right: 0; margin:auto; width: 220px; height: 60px; border-radius: 3rem;
+      >h3{line-height: 65px; 
+        >a{display:block;font-size: 20px; background-color: #333333; border-radius: 3rem; }
+        >a:hover,
+        >a:focus{background-color: #fff; color:#192d56; box-shadow: 2px 4px 5px #333;}
+      }
     }
-   }
+  }
   }//#headBox
   #mainBox{height: 3120px;
    >.contentBox{position: relative; height: 1100px;
     >.c_box{width: 100%; height:100%; background-color: inherit;
-      >.c_pic_area{position: absolute;top:25%; left:0; right:0; margin:auto;  width: 700px; height: 590px}
-      >.mune_area{position: absolute; top: 40%; right:0; width: auto; height: auto;
-       >ul{width: auto; height: auto;
-        >li{float:none; width: 40vw; height: 105px; margin-bottom: 30px;
+      >.c_pic_area{position: absolute;top:25%; left:0; right:0; margin:auto;  width: 700px; height: 590px; box-shadow: 5px 5px 12px #111;}
+      >.menu_area{position: absolute; top: 40%; right:0; width: auto; height: auto;
+       >ul{width: 40vw; height: auto;
+        >li{float:right; width: 40vw; height: 105px; margin-bottom: 30px;
           background-color:rgba(1,1,1,0.5);
           >a{
-            >span{width: auto; height: 100%; color:#fff; font-size:30px; line-height: 55px; text-align: right;  font-weight: bold; margin-right:60%; padding-top:0;
+            >span{width: auto; height: 100%; color:#fff; font-size:30px; line-height: 55px; text-align: right;  font-weight: bold; margin-right:60%; padding-top:20px;
              >.br{display:none;}}
             }
           }
-          >li:nth-child(2) span{padding-top:0;}
+          >li:nth-child(2) span{padding-top:20px;}
         >li:last-child{margin-bottom:0;}
+        >li:hover, >li.act{background-color: rgba(1,1,1,0.9);width: 880px; height: 120px; padding-top: 22px;
+        }
       }
-     }//.mune_area
+     }//.menu_area
     }
   }
-   >.picBox{height: 1050px;}
-   >.adBox{position: relative; height: 970px;
+   >.picBox{height: 950px;}
+   >.adBox{position: relative; height: 970px; padding-top: 80px; 
     >.indicator{width: auto;bottom:8%;
       >li{float: left;
        >a{width:25px; height:25px;}
       }
     }
-    >.ad_title{font-size:50px}
-    >.ad_area{position: absolute; height: 510px; top:50%; left:930px; transform: translateY(-50%);
-      >.ad_zone{width: 430px; height: 510px;
+    >.ad_title{position: absolute; left: 25%; top:40%; font-size:50px}
+    >.ad_area{position: absolute; height: 510px; top:50%; left:43%; transform: translateY(-50%); overflow: hidden; 
+      >.ad_zone{width: 430px; height: 510px; margin:0; 
         >ul{$count: 5;
-         width:430px * $count; height: 100%; transform:translateX(-50%); margin-left:50%;
+         width:430px * $count; height: 100%; transform:translateX(0); margin-left:0;
           >li{width: 430px; height: 510px;}
         }
       }
@@ -374,9 +430,10 @@ background-size: cover;
   }//mainBox
 
   #footBox{height: 400px;
-   >.snsBox{height: 130px;}
+   >.snsBox{height: 130px;
+     >ul{width: 80%;}}
    >.awardBox{display: none;}
-   >.infoBox{margin:auto; height: 219px; 
+   >.infoBox{margin:auto; width: 80%; height: 219px; 
     >.info_01{font-size: 0.9rem; }
     >.info_02{font-size: 0.8rem; }}
   }

@@ -1,0 +1,85 @@
+/* reset and common css */
+
+html,body{width:100%; height:100%; color:#222328; font-family:sans-serif;}
+*{margin:0; padding:0; border:0; outline:0;}
+ul,ol,li{list-style:none;}
+a{text-decoration:none; color:inherit;}
+header,article,section,nav,footer{display: block;}
+
+.hidden{display:block; width:0; height:0; position:absolute; z-index:-1; overflow:hidden;}
+.cf:after{content:" "; display:block; clear:both;}
+
+/* design */
+
+#wrap{width:1200px; height:auto; margin:auto;}
+
+/*-------------------------------------------------------------*/
+
+#headBox{width:100%; height:100px; background-color:#f1c; padding:30px 0; padding-right:50px; box-sizing:border-box; }
+
+h1{float:left; width:200px; height:40px; background-color:#acf;}
+
+#gnb{float:right; position:relative; z-index:150; width:800px; height:30px; margin-top:10px; background-color:#aff;}
+#gnb>dl{float:left; width:200px; height:auto; text-align: center; line-height:30px; background-color:#fff;}
+#gnb>dl>dt{width:100%; height:100%; font-weight:bold;}
+#gnb>dl>dd{width:100%; height:auto;}
+#gnb a{display:block; width:100%; height:30px;}
+#gnb a:hover,
+#gnb a:focus{background-color:#222328; color:#ffffff;}
+#gnb dd{display:none;}
+
+/*-------------------------------------------------------------*/
+
+#viewBox{width:100%; height:300px; overflow:hidden; text-align: center; line-height:300px; font-size:3rem;}
+ .slide_guide{width:100%; height:300%; position:relative;}
+ .slide_01{width:100%; height:300px; background-color:#7fa;}
+ .slide_02{width:100%; height:300px; background-color:#afa;}
+ .slide_03{width:100%; height:300px; background-color:#77a;}
+
+
+/*-------------------------------------------------------------*/
+#conBox{width:100%; height:200px;  }
+
+#conBox>div{float:left; width:400px; height:100%;}
+/* .con_01{}*/
+  .con_01>ul{width:100%; height:30px;}
+  .con_01>ul>li{float:left; width:100px; height:100%; text-align:center; line-height:30px; background-color:#ffffff;}
+  .con_01>ul>li.action{background-color:#222328; color:#ffffff;}
+  .con_01 a{display:block; width:100%; height:100%;}
+  
+  .tab_area{width:100%; height:170px;}
+  .tab_area>div{width:100%; height:100%;}
+  .tab_area>.news{background-color:#faa;}
+  .tab_area>.gallery{background-color:#a77; display:none;}
+
+ .con_02{background-color:#f35}
+
+ .con_03{background-color:#1f5}
+  .con_btn{width:100%; height:100%;}
+  .con_btn>a{display:block; width:100%; height:100%; text-align: center; line-height:200px; font-size:2rem;}
+
+ .popup{display:none; position:fixed; z-index:100; left:0; right:0; top:0; bottom:0; margin:auto; width:400px; height:300px; background-color:#ffffff; border-radius:3px;}
+ .popup>.close{width:50px; height:50px; background-color:#222328; color:#ffffff;}
+ .popup_bg{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(50,50,50,0.5);}
+/*-------------------------------------------------------------*/
+#footBox{width:100%; height:100px; background-color:#faf; }
+#footBox h2{float:left; width:200px; height:100%;}
+#footBox address{float:left; width:800px; height:100%; font-style:normal; text-align: center;}
+#footBox sns{float:left; width:200px; height:100%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

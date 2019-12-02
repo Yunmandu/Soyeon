@@ -26,8 +26,8 @@ table, thead, tbody, tfoot, tr, th, td{margin: 0; padding: 0;
                   border-spacing: 0; border-collapse: collapse; border:1px solid #777;}
 
 a{color: #777; text-decoration: none;}
-a:hover{color: #f07;}
-a:focus{outline:2px solid #f06;}
+a:hover{color: inherit;}
+a:focus{outline:2px solid inherit;}
 abbr{text-decoration: none; text-transform: uppercase;}
 button{border:0; cursor:pointer; background-color: transparent; border:2px solid #f06;}
 button:hover{background-color: #fa0;}
